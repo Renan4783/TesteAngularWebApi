@@ -1,0 +1,7 @@
+@media (min-width: 360px)
+{
+    p
+    {
+        display:inline; margin: 5px 5px 5px 5px
+    }
+}

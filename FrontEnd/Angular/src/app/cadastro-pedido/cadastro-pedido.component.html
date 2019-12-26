@@ -1,0 +1,55 @@
+<mat-toolbar color="primary">
+	<mat-toolbar-row>
+		<span>Novo Pedido</span>
+	</mat-toolbar-row>
+</mat-toolbar>
+
+<div style="margin:32px;">
+  <button mat-raised-button color="primary" (click)="voltar()">Voltar</button>
+</div>
+
+<mat-card style="margin:32px;">
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field class="formField">
+      <input matInput placeholder="Numero do Pedido" formControlName="numero" required>
+    </mat-form-field>
+    <mat-form-field class="formField">
+      <mat-label>Cliente</mat-label>
+      <mat-select formControlName="idCliente">
+        <mat-option *ngFor="let cliente of clientes" [value]="cliente.Id">
+          {{ cliente.Nome }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width">
+      <mat-label>Produtos</mat-label>
+      <mat-select formControlName="produtos" multiple>
+        <mat-option *ngFor="let produto of produtos" [value]="produto" (click)="addValor()">
+          <p matLine>
+            <span>{{ produto.Descricao }}</span>
+            <span class="demo-2"> - R$ {{ produto.Valor | number : '1.2-2' }}</span>
+          </p>
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="formField">
+      <input matInput placeholder="Valor" formControlName="valor" [value]="" pattern="^\$?(([1-9]\d{0,2}(,\d{3})*)|0)?\.\d{1,2}$" required>
+    </mat-form-field>
+    <mat-form-field class="formField">
+      <input matInput placeholder="Desconto" formControlName="desconto">
+    </mat-form-field>
+    <mat-form-field class="formField">
+      <input matInput placeholder="ValorTotal" formControlName="valortotal" [value]="" pattern="^\$?(([1-9]\d{0,2}(,\d{3})*)|0)?\.\d{1,2}$" required>
+    </mat-form-field>
+    <br />
+		<br />
+
+		<button mat-raised-button color="primary">Salvar</button>
+  </form>
+  
+</mat-card>
+
+

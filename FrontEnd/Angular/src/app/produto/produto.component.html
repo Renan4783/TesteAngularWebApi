@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+	<mat-toolbar-row>
+		<span>Produtos</span>
+	</mat-toolbar-row>
+</mat-toolbar>
+
+<div style="margin:32px;">
+
+	<p>
+		<button mat-raised-button color="primary" (click)="voltar()">Voltar</button>
+	</p>
+	<p>
+		<button mat-raised-button color="primary" (click)="novo()">Novo Produto</button>
+	</p>
+
+	<br />
+
+	<mat-card style="margin:32px;">
+		<mat-nav-list>
+			<mat-list-item *ngFor="let produto of produtos">
+				<mat-icon>shopping_cart</mat-icon>
+				<p matLine>{{ produto.Descricao }}</p>
+				<p matLine class="demo-2">R$ {{ produto.Valor | number : '1.2-2'}}</p>
+			</mat-list-item>
+		</mat-nav-list>
+	</mat-card>
+  	
+</div>

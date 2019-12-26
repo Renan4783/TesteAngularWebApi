@@ -8,7 +8,7 @@ class Contato {
 }
 
 @Component({
-	selector: 'app-contatos',
+	selector: 'app-contato',
 	templateUrl: './contatos.component.html',
 	styleUrls: ['./contatos.component.css']
 })

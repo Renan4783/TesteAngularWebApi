@@ -10,8 +10,9 @@ namespace AspNetWebApi.Context
 {
     public class Contexto : DbContext
     {
-        public DbSet<Contato> Contatos { get; set; }
-        public DbSet<Mensagem> Mensagens { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Pedido> Pedidos { get; set; }
+        public DbSet<Produto> Produtos { get; set; }
 
         public Contexto() : base("ConnectionString")
         {
@@ -21,6 +22,5 @@ namespace AspNetWebApi.Context
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
-
     }
 }

@@ -1,0 +1,40 @@
+<mat-toolbar color="primary">
+	<mat-toolbar-row>
+		<span>Pedidos</span>
+	</mat-toolbar-row>
+</mat-toolbar>
+
+<div style="margin:32px;">
+
+	<p>
+		<button mat-raised-button color="primary" (click)="voltar()">Voltar</button>
+	</p>
+
+	<p>
+		<button mat-raised-button color="primary" (click)="novo()">Novo Pedido</button>
+	</p>
+
+	<br />
+
+	<mat-card style="margin:32px;">
+		<mat-nav-list>
+			<mat-list-item *ngFor="let pedido of pedidos">
+				<mat-icon>assignment_late</mat-icon>
+				<h3 matLine>{{ pedido.Cliente.Nome }}</h3>
+				<p matLine>
+					<span class="demo-2">
+						<button mat-raised-button color="primary" (click)="verProdutos(pedido)">
+							Produtos
+						</button>
+					</span>
+					<span>Numero do Pedido: {{ pedido.Numero }}</span>
+					<span>Data do Pedido: {{ pedido.Data | date:'dd/MM/yyyy' }}</span>
+					<span>Valor Total: R$ {{ pedido.ValorTotal | number : '1.2-2' }}</span>
+				</p>
+			</mat-list-item>
+		</mat-nav-list>
+	</mat-card>
+  	
+  
+</div>
+

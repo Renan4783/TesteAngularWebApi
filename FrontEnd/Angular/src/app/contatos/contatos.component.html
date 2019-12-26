@@ -1,19 +1,19 @@
 <mat-toolbar color="primary">
 	<mat-toolbar-row>
-		<span>Contatos</span>
+		<span>Clientes</span>
 	</mat-toolbar-row>
 </mat-toolbar>
 
 <div style="margin:32px;">
 
-	<button mat-raised-button color="primary" (click)="novo()">Novo Contato</button>
+	<button mat-raised-button color="primary" (click)="novo()">Novo Cliente</button>
 
 	<br />
 
 	<mat-nav-list>
 		<mat-list-item *ngFor="let contato of contatos" (click)="mensagens(contato)">
 			<mat-icon>account_circle</mat-icon>
-			{{ contato.Nome }}
+			{{ cliente.Nome }}
 		</mat-list-item>
 	</mat-nav-list>
 

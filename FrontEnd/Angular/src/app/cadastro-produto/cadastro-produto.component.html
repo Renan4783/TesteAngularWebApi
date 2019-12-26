@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+	<mat-toolbar-row>
+		<span>Novo Produto</span>
+	</mat-toolbar-row>
+</mat-toolbar>
+
+<div style="margin:32px;">
+  <button mat-raised-button color="primary" (click)="voltar()">Voltar</button>
+</div>
+
+<mat-card style="margin:32px;">
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Descrição" formControlName="descricao" required>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Valor" formControlName="valor" pattern="^\$?(([1-9]\d{0,2}(,\d{3})*)|0)?\.\d{1,2}$" required>
+    </mat-form-field>
+    <br />
+		<br />
+
+		<button mat-raised-button color="primary">Salvar</button>
+  </form>
+  
+</mat-card>
+
+
